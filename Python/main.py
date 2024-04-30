@@ -12,3 +12,7 @@ if __name__ == "__main__":
 
     r1.connect()
     r1.ping()
+
+     
+    print(r1)
+

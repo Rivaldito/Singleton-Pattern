@@ -45,9 +45,8 @@ class RedisClient:
                 password=self.redis_pasword,
                 decode_responses=True
             )
-            print("Connection to Redis DB successful")
         except:
-            print("Connection to Redis DB failed")
+            self.client = None
     
     def ping(self):
         if self.client.ping():

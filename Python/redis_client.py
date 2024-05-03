@@ -17,7 +17,7 @@ class RedisClient:
             #Call the constructor
             instance.__init__(redis_host, redis_port, redis_username, redis_password)
 
-            return cls.__instances[config_key]
+        return cls.__instances[config_key]
     
     #Constructor of the class
     def __init__(self, redis_host, redis_port, redis_username, redis_password) -> None:

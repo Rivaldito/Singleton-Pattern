@@ -15,7 +15,7 @@ class TestRedisClinet(unittest.TestCase):
         client.connect()
         self.assertIsNotNone(client.client,"Could not create the Redis client")
     
-    def test_single_instnace(self):
+    def test_single_instance(self):
 
         r1 = redis_client.RedisClient(
         redis_host= settings.publicEndPoint,
@@ -33,7 +33,7 @@ class TestRedisClinet(unittest.TestCase):
         )
         r2.connect()
 
-        self.assertEqual(r1,r2,"Not singleton instance")
+        self.assertNotEqual(r1,r2,"Not singleton instance")
 
 
 

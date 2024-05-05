@@ -23,18 +23,17 @@ class TestRedisClinet(unittest.TestCase):
         redis_password= settings.password,
         redis_username=settings.username
         )
-
-        r1.connect()
         r2 = redis_client.RedisClient(
         redis_host= settings.publicEndPoint,
         redis_port= settings.port,
         redis_password= settings.password,
         redis_username=settings.username
         )
+
+        r1.connect()
         r2.connect()
 
-        self.assertNotEqual(r1,r2,"Not singleton instance")
-
+        self.assertEqual(r1,r2,"Not singleton instance")
 
 
 
